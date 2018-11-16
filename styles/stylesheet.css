@@ -177,7 +177,13 @@ div	{
 body {
 	background-size:cover;
     background-color: #66ff99;
-	width: 100%;
+	width:100% !important;
+	margin:0 !important;
+}
+
+body .logons	{
+}
+body .home	{
 }
 
 .topnav {
@@ -241,9 +247,28 @@ body {
     background-color: rgba(0,0,0,.2);
 }
 
+.container	{
+	width:90%;
+	margin:auto;
+}
 
-.row {
-	background-image: url("images/row-bg.jpg");
+
+.logons .column {
+	background-image: url(../images/row-bg.jpg);
+	background-color: #4390bc;
+	position: relative;
+	overflow: hidden;
+	margin: 5px auto;
+	border: 1px solid #68a7ca;
+    box-shadow: 1px 1px 5px 1px rgba(60,60,60,.4);
+    padding: 15px;
+	width: 400px;
+	max-height: 400px;
+}
+
+
+.home .column {
+	background-image: url(../images/row-bg.jpg);
 	background-color: #4390bc;
 	position: relative;
 	overflow: hidden;
