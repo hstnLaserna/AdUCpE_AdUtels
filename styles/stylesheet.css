@@ -5,16 +5,18 @@ div	{
 }
 body {
 	background-size:cover;
-    background-color: #66ff99;
 	width:100% !important;
 	margin:0 !important;
 }
 
-body .logons	{
+.bodyrooms	{
+	background-image:url(../images/wallspaper2.jpg);
+	background-color: #e2fff5;
+	background-size:cover;
+	width:100% !important;
+	margin:0 !important;
 }
 
-body .home	{
-}
 
 .topnav {
 	background-color: rgba(180,255,235,1);
@@ -53,15 +55,28 @@ body .home	{
 
 .container	{
 	width:90%;
+	height:calc(100% - 55px);
 	margin:55px auto 0;
 }
 
-.logons .column {
+.divleft	{
+	float:left;
+	display:block;
+	width:262px;
+}
+
+.divright	{
+	float:left;
+	display:block;
+	width:1080px;
+}
+
+.logonform {
 	background-image: url(../images/row-bg.jpg);
 	background-color: #4390bc;
 	position: relative;
 	overflow: hidden;
-	margin: 5px auto;
+	margin:auto;
 	border: 1px solid #68a7ca;
     box-shadow: 1px 1px 5px 1px rgba(60,60,60,.4);
     padding: 15px;
@@ -94,24 +109,35 @@ body .home	{
     color: #0CF;
 }
 
-.home .column {
+.column {
 	float: left;
 	/*background-image: url(../images/row-bg.jpg);*/
-	background-color: #76debb;
+	background-color: #fff;
 	overflow: hidden;
 	margin: 5px;
 	border: 1px solid #68a7ca;
     box-shadow: 1px 1px 5px 1px rgba(60,60,60,.4);
     padding: 5px;
-}
+}ont
 
 .leftcol	{
 	width: 250px;
 	padding: 0 !important;
+	position:fixed;
+}
+
+.frame	{
+	width: 250px;
+	height:250px;
+	padding: 0 !important;
+	display:block;
+	foat:left;
 }
 
 .maincontent	{
-	width: calc(100% - 300px);
+	width: 100%;
+	min-width:500px;
+	overflow:hidden;
 }
 
 .leftcol a {
@@ -128,21 +154,7 @@ body .home	{
 	background-color: rgba(255,255,255,.4);
     color: #009;
 }
-/*
-.menuitem a	{
-    color: #000;
-    float: right;
-    display: block;
-    text-align: center;
-    padding: 15.5px 16px;
-    text-decoration: none;
-	height: auto;
-}
-.menuitem a:hover {
-	background-color: rgba(0,0,0,.4);
-    color: #0CF;
-}
-*/
+
 div.divider	{
 	margin:2px auto;
 	overflow:hidden;
@@ -152,15 +164,12 @@ div.divider	{
 }
 	
 img	{
-	
+	width:100%;
 }
 img.center	{
 	display:block;
 	margin-left:auto;
 	margin-right:auto;
-}
-img.imgleftcol	{
-	width:100%;
 }
 
 .content {
@@ -200,6 +209,10 @@ span.label {
 .center	{
 	margin: auto;
 }
+input.dateselector	{
+	font-family:"Comic Sans MS", cursive;
+	color:#003;
+}
 
 h1	{
 	color: #434343;
@@ -208,38 +221,33 @@ h1	{
 }
 .smaller	{
 	font-size:12px;
+	font-style:italic;
 }
-.roompics{
-	width: auto;
-	border:1px solid black;
-}
-.mainleft{
+.leftpanel{
 	float: left;
-	padding: 5px;
-	margin: 5px;
-	text-align:left;
+	margin-top:5px;
 	width:50%;
-    box-shadow: 0px 0px 1px 1px rgba(50,50,50,.5);
-	min-width:300px;
 }
-.mainright{
-	float:left;
-	padding: 5px;
-	margin: 5px;
-	text-align:left;
-	width: calc(30% - (10px + 30px));
-    box-shadow: 0px 0px 1px 1px rgba(50,50,50,.5);
-	min-width:300px;	
-}
-.roomothers{
+
+.division	{
 	float: left;
-	padding: 5px;
-	margin: 5px;
-	text-align:left;
-	width: calc(50% - (10px + 30px));
-    box-shadow: 0px 0px 1px 1px rgba(50,50,50,.5);
-	min-width:300px;
+	margin: 0 5px;
+	width: 460px;
 }
+.conts{
+	padding:5px;
+	margin: 10px 0;
+	text-align:left;
+}
+.bookingcol{
+	padding:5px;
+	margin: 10px 0;
+	text-align:left;
+	background-color:rgba(255,255,255,0.5);
+	box-shadow:0 0 5px 1px rgba(0,0,0,.2);	
+}
+
+
 .roomloc	{
 	color: #434343;
 	font-size:16px;

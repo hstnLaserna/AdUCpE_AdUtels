@@ -7,7 +7,7 @@
 
 </head>
 
-<body class="home" style="background-image:url(images/wallpaper2.jpg);">
+<body class="bodyrooms">
     <div class="topnav">
 		<div class="logonav"><img src="images/logo.png" id="logo"></div>
         <div class="lblnav">AdUTels</div>
@@ -19,68 +19,87 @@
     </div>
 
     <div class="container" id="sample">
-        <div class="column leftcol samplefz">
-            <img src="images/header.png" alt="logo" class="center imgleftcol">
-            <a class="menuitem" :href="seerooms"> See available rooms </a>
-            <div class="divider"></div>
-            <a class="menuitem" v-bind:href="bookhotel"> Book a hotel </a>
-            <div class="divider"></div>
-            <a class="menuitem" v-bind:href="removebooking"> Remove a booking request </a>
-            <div class="divider"></div>
-            <a class="menuitem" v-bind:href="viewbooking"> View booking requests </a>
-            <div class="divider"></div>
-            <a class="menuitem" v-bind:href="updatebooking"> Update booking requests</a>
-        </div>
-        <div class="column maincontent samplefz">
-        	<div class="roompics">
+    	<div class="divleft">
+            <div class="column leftcol">
+                <img src="images/header.png" alt="logo" class="center imgleftcol">
+                <span v-html="menu1"></span>
+                <span v-html="menu2"></span>
+                <span v-html="menu3"></span>
+                <span v-html="menu4"></span>
+                <span v-html="menu5"></span>
             </div>
-        	<div class="mainleft">
-                <h1> Room Name </h1>
-                <p class="roomloc">San Francisco, Ermita, Mexico</p>
-                <p class="roomprops">[1] max_guests [2] no_bedrooms [3] no_bed [4] no_bath </p>
-			</div>
-        	<div class="mainright">
-                <h1> P12,000 <span class="smaller"> per night </span> </h1>
-                <p> //input dates</p>
-                <p> //input no of guests </p>
-                <p> //submit button</p>
-			</div>
-        	<div class="mainleft">
-                <h1> Comments </h1>
-                <p> ADULTS ONLY NOT FAMILY FRIENDLY Thank you for understanding!
-					NO children or grandchildren of any age under 18 years old are allowed on the property at any time. Includes infants, NO KIDS of any age!
-					NO SMOKERS of any kind- you guys make the rooms smell bad. 
-					The Lookout is a private studio with a private entrance and private everything else! You will have your own bathroom/ bedroom/ small coffee bar with					 					fridge, microwave, toaster, and tea kettle. The Lookout is all yours!</p>
-                <p> ADULTS ONLY NOT FAMILY FRIENDLY Thank you for understanding!
-					NO children or grandchildren of any age under 18 years old are allowed on the property at any time. Includes infants, NO KIDS of any age!
-					NO SMOKERS of any kind- you guys make the rooms smell bad. 
-					The Lookout is a private studio with a private entrance and private everything else! You will have your own bathroom/ bedroom/ small coffee bar with					 					fridge, microwave, toaster, and tea kettle. The Lookout is all yours!</p>
-                <p> //input no of guests </p>
-                <p> ADULTS ONLY NOT FAMILY FRIENDLY Thank you for understanding!
-					NO children or grandchildren of any age under 18 years old are allowed on the property at any time. Includes infants, NO KIDS of any age!
-					NO SMOKERS of any kind- you guys make the rooms smell bad. 
-					The Lookout is a private studio with a private entrance and private everything else! You will have your own bathroom/ bedroom/ small coffee bar with					 					fridge, microwave, toaster, and tea kettle. The Lookout is all yours!</p>
-                <p> //input no of guests </p>
-			</div>
-            <!--
-			<p>
-                <span> {{foods[0]}}</span>
-                <span> {{foods[1]}}</span>
-                <span> {{foods[2]}}</span>
-			</p>
-            <p>
-            	<span v-for="fd in foods">
-            		{{fd}}
-                </span>
-            </p>
-            <p>
-            	<span v-for="fd in foods">Food name: {{fd.foodname}} | Rating: {{fd.rating}} <br></span>
-            </p>
-            <input type="text" v-model="updates">
-            <input type="button" v-on:click="clearThis" v-on:contextmenu="setHustino" value="Btn for JS"><br>
-            {{updates}} || {{name}}-->
+		</div>
+        <div class="divright">
+            <!-- Room details STARTS here-->
+            <div class="column maincontent" v-for="room in rooms">
+                <div class="dleft">
+                    <div class="division">
+                        <div class="conts">
+                            <h1> {{room.Room_Name}} </h1>
+                            <p class="roomloc">{{room.address}}</p>
+                            <table class="roomprops" style="width:80%; margin:auto;">
+                            	<tr>
+                            		<td>웃 Max Guests: {{room.max_guests}}</td>
+                            		<td>⌺ Bedrooms: {{room.no_bedrooms}}</td>
+                                </tr>
+                            	<tr>
+                            		<td>⌸ Beds: {{room.no_bed}}</td>
+                            		<td>◧ Baths: {{room.no_bath}}</td>
+                                </tr>
+							</table>
+                        </div>
+                        <div class="conts">
+                            <h1> Comments </h1>
+                            <p>{{room.comments_and_feedback}}</p>
+                        </div>
+                    </div>   
+                </div> 
+                <div class="division">
+                    <div class="bookingcol">
+                        <h1> {{room.currency_symbol}} {{room.price}}<span class="smaller"> per night </span> </h1>
+                        <p>	From: <input type="date" v-model="room.begindate" class="dateselector"></p>
+                        <p>	Until: <input type="date" v-model="room.enddate" class="dateselector"></p>
+                        <p>
+                            <span>Guests</span>
+                                <select class="dateselector" v-model="room.guestnumbers">
+                                <option class="dateselector" v-for="i in room.max_guests" v-model="room.guestnumbers">{{i}}</option>
+                                </select>
+                        </p>
+                        <p> <br> <i>I confirm the details below are correct</i><br><input type="submit" value="Reserve"></p>
+                        <p>
+                        	Book for: {{room.Room_Name}}<br>
+                            For amount of: {{room.currency_symbol}} {{room.price}} per night<br>
+                            From: {{room.begindate}}<br>
+                            Until: {{room.enddate}}<br>
+                            With # of guests: {{room.guestnumbers}}<br>
+                        </p>
+
+
+                    </div>
+                </div>
+            </div>
+            <!-- Room details ends here-->
         </div>
 	</div>
-<script src="javascript/index.js"> </script>
+<script src="javascript/index.js  "> </script>
 </body>
 </html>
+
+
+<!--
+<p>
+    <span> {{foods[0]}}</span>
+    <span> {{foods[1]}}</span>
+    <span> {{foods[2]}}</span>
+</p>
+<p>
+    <span v-for="fd in foods">
+        {{fd}}
+    </span>
+</p>
+<p>
+    <span v-for="fd in foods">Food name: {{fd.foodname}} | Rating: {{fd.rating}} <br></span>
+</p>
+<input type="text" v-model="updates">
+<input type="button" v-on:click="clearThis" v-on:contextmenu="setHustino" value="Btn for JS"><br>
+{{updates}} || {{name}}-->

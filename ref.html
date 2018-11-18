@@ -19,39 +19,39 @@
     </div>
 
     <div class="container" id="sample">
-        <div class="column leftcol samplefz">
-            <img src="images/header.png" alt="logo" class="center imgleftcol">
-            <a class="menuitem" :href="seerooms"> See available rooms </a>
-            <div class="divider"></div>
-            <a class="menuitem" v-bind:href="bookhotel"> Book a hotel </a>
-            <div class="divider"></div>
-            <a class="menuitem" v-bind:href="removebooking"> Remove a booking request </a>
-            <div class="divider"></div>
-            <a class="menuitem" v-bind:href="viewbooking"> View booking requests </a>
-            <div class="divider"></div>
-            <a class="menuitem" v-bind:href="updatebooking"> Update booking requests</a>
+    	<div class="divleft">
+            <div class="column leftcol">
+                <img src="images/header.png" alt="logo" class="center">
+                <span v-html="menu1"></span>
+                <span v-html="menu2"></span>
+                <span v-html="menu3"></span>
+                <span v-html="menu4"></span>
+                <span v-html="menu5"></span>
+            </div>
         </div>
-        <div class="column maincontent samplefz">
-        
-        	<h1> Lectures for Vue</h1>
-        	<h1 v-if="showName">[ {{ctr}} ] {{name}} </h1>
-            <p>
-                <span> {{foods[0]}}</span>
-                <span> {{foods[1]}}</span>
-                <span> {{foods[2]}}</span>
-			</p>
-            <p>
-            	<span v-for="fd in foods">
-            		{{fd}}
-                </span>
-            </p>
-            <p>
-            	<span v-for="fd in foods">Food name: {{fd.foodname}} | Rating: {{fd.rating}} <br></span>
-            </p>
-            <input type="text" v-model="updates">
-            <input type="button" v-on:click="clearThis" v-on:contextmenu="setHustino" value="Btn for JS"><br>
-            {{updates}} || {{name}}
-        </div>
+    	<div class="divright">
+            <div class="column maincontent samplefz">
+            
+                <h1> Lectures for Vue</h1>
+                <h1 v-if="showName">[ {{ctr}} ] {{name}} </h1>
+                <p>
+                    <span> {{foods[0]}}</span>
+                    <span> {{foods[1]}}</span>
+                    <span> {{foods[2]}}</span>
+                </p>
+                <p>
+                    <span v-for="fd in foods">
+                        {{fd}}
+                    </span>
+                </p>
+                <p>
+                    <span v-for="fd in foods">Food name: {{fd.foodname}} | Rating: {{fd.rating}} <br></span>
+                </p>
+                <input type="text" v-model="updates">
+                <input type="button" v-on:click="clearThis" v-on:contextmenu="setHustino" value="Btn for JS"><br>
+                {{updates}} || {{name}}
+            </div>
+		</div>
 	</div>
 <script src="javascript/index.js"> </script>
 </body>

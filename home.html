@@ -2,6 +2,8 @@
 <head>
     <title>AdUTels - Home</title>
     <link rel="stylesheet" type="text/css" href="styles/stylesheet.css">
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"> </script>
+	<script src="https://unpkg.com/axios/dist/axios.min.js"> </script>
 </head>
 
 <body class="home" style="background-image:url(images/wallpaper2.jpg);">
@@ -14,22 +16,27 @@
             <a href="logon.html">Log-out</a>
         </div>
     </div>
-    <div class="container">
-        <div class="column leftcol">
-            <img src="images/header.png" alt="logo" class="center imgleftcol">
-            <a class="menuitem" href="ref.html"> See available rooms </a>
-            <div class="divider"></div>
-            <a class="menuitem" href="ref.html"> Book a hotel </a>
-            <div class="divider"></div>
-            <a class="menuitem" href="ref.html"> Remove a booking request </a>
-            <div class="divider"></div>
-            <a class="menuitem" href="ref.html"> View booking requests </a>
-            <div class="divider"></div>
-            <a class="menuitem" href="ref.html"> Update booking requests</a>
+    
+    <div class="container" id="sample">
+    	<div class="divleft">
+            <div v-html="leftpanel"></div>
+            <div class="column leftcol">
+                <img src="images/header.png" alt="logo" class="center">
+                <span v-html="menu1"></span>
+                <span v-html="menu2"></span>
+                <span v-html="menu3"></span>
+                <span v-html="menu4"></span>
+                <span v-html="menu5"></span>
+            </div>
         </div>
-        <div class="column maincontent">
-        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-        </div>
+    	<div class="divright">
+    
+            <div class="column maincontent">
+            <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+            </div>
+		</div>	
 	</div>
+    
+<script src="javascript/index.js"> </script>
 </body>
 </html>
