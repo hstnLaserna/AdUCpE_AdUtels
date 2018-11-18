@@ -2,12 +2,16 @@
 new Vue({
     el: '#sample',
 	mounted: function(){
-		this.twowaybind="foobar";
+		this.updates="foobar";
 	},
 	data:	{
 		name: 'Hustino',
-		twowaybind: 'update this',
-		link: 'https://www.google.com/',
+		updates: 'update thissz',
+		seerooms: 'rooms.html',
+		bookhotel: 'ref.html',
+		removebooking: 'ref.html',
+		viewbooking: 'ref.html',
+		updatebooking: 'ref.html',
 		showName: true,
 		foods:	[
 			{	foodname: "apple", rating: 10},
@@ -15,22 +19,19 @@ new Vue({
 			{	foodname: "choco", rating: 8},
 			{	foodname: "mango", rating: 7},
 		],
-		posts: null,
+		ctr: 1,
 	},
 	
 	methods: {
-		clearName: function(){
-			this.twowaybind="";
+		clearThis: function(){
+			this.name=this.updates;
+			this.updates="";
+			this.ctr++;
 		},
-		getPosts: function(){
-		axios({
-			method: 'get',
-			url: "",
-		})
-		axios({
-			method: 'get',
-			url: "",
-		})
-		}
+		setHustino: function(){
+			this.name="Hustino";
+			xx = 'huwaw';
+			this.updates=xx;
+		},
 	},
 });

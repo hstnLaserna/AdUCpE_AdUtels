@@ -2,7 +2,6 @@
 /* CSS Document */
 
 div	{
-	display:block;
 }
 body {
 	background-size:cover;
@@ -97,8 +96,8 @@ body .home	{
 
 .home .column {
 	float: left;
-	background-image: url(../images/row-bg.jpg);
-	background-color: #4390bc;
+	/*background-image: url(../images/row-bg.jpg);*/
+	background-color: #76debb;
 	overflow: hidden;
 	margin: 5px;
 	border: 1px solid #68a7ca;
@@ -117,7 +116,7 @@ body .home	{
 
 .leftcol a {
 	width:calc(100% - 32px);
-    color: #36F;
+    color: #000;
     float: left;
     display: block;
     text-align: center;
@@ -200,4 +199,56 @@ span.label {
 
 .center	{
 	margin: auto;
+}
+
+h1	{
+	color: #434343;
+	font-size: 24px;
+	margin-top:0;
+}
+.smaller	{
+	font-size:12px;
+}
+.roompics{
+	width: auto;
+	border:1px solid black;
+}
+.mainleft{
+	float: left;
+	padding: 5px;
+	margin: 5px;
+	text-align:left;
+	width:50%;
+    box-shadow: 0px 0px 1px 1px rgba(50,50,50,.5);
+	min-width:300px;
+}
+.mainright{
+	float:left;
+	padding: 5px;
+	margin: 5px;
+	text-align:left;
+	width: calc(30% - (10px + 30px));
+    box-shadow: 0px 0px 1px 1px rgba(50,50,50,.5);
+	min-width:300px;	
+}
+.roomothers{
+	float: left;
+	padding: 5px;
+	margin: 5px;
+	text-align:left;
+	width: calc(50% - (10px + 30px));
+    box-shadow: 0px 0px 1px 1px rgba(50,50,50,.5);
+	min-width:300px;
+}
+.roomloc	{
+	color: #434343;
+	font-size:16px;
+	text-decoration:none;
+	
+}
+.roomprops	{
+	color: #434343;
+	font-size:16px;
+	text-decoration:none;
+	
 }

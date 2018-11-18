@@ -3,7 +3,6 @@
     <title>AdUTels - REF1</title>
     <link rel="stylesheet" type="text/css" href="styles/stylesheet.css">
 	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"> </script>
-    
 	<script src="https://unpkg.com/axios/dist/axios.min.js"> </script>
 
 </head>
@@ -20,27 +19,22 @@
     </div>
 
     <div class="container" id="sample">
-        <div class="column leftcol">
+        <div class="column leftcol samplefz">
             <img src="images/header.png" alt="logo" class="center imgleftcol">
-            <a class="menuitem" href="ref.html"> See available rooms </a>
+            <a class="menuitem" :href="seerooms"> See available rooms </a>
             <div class="divider"></div>
-            <a class="menuitem" href="ref.html"> Book a hotel </a>
+            <a class="menuitem" v-bind:href="bookhotel"> Book a hotel </a>
             <div class="divider"></div>
-            <a class="menuitem" href="ref.html"> Remove a booking request </a>
+            <a class="menuitem" v-bind:href="removebooking"> Remove a booking request </a>
             <div class="divider"></div>
-            <a class="menuitem" href="ref.html"> View booking requests </a>
+            <a class="menuitem" v-bind:href="viewbooking"> View booking requests </a>
             <div class="divider"></div>
-            <a class="menuitem" href="ref.html"> Update booking requests</a>
-            <div class="divider"></div>
-            <a class="menuitem" v-bind:href="link"> Google </a>
+            <a class="menuitem" v-bind:href="updatebooking"> Update booking requests</a>
         </div>
-        <div class="column maincontent">
+        <div class="column maincontent samplefz">
         
-        	<h1> Lectures for Axios</h1>
-            <input type="button" v-on:click="getPosts"><br>
-            
         	<h1> Lectures for Vue</h1>
-        	<h1 v-if="showName"> {{5 + 10}} {{name}} </h1>
+        	<h1 v-if="showName">[ {{ctr}} ] {{name}} </h1>
             <p>
                 <span> {{foods[0]}}</span>
                 <span> {{foods[1]}}</span>
@@ -52,19 +46,13 @@
                 </span>
             </p>
             <p>
-            	<span v-for="fd in foods">
-            		Food name: {{fd.foodname}} | Rating: {{fd.rating}} <br>
-                </span>
+            	<span v-for="fd in foods">Food name: {{fd.foodname}} | Rating: {{fd.rating}} <br></span>
             </p>
-            
-            <input type="password" v-model="twowaybind">
-            <input type="button" v-on:click="clearName"><br>
-            {{twowaybind}}
-            
+            <input type="text" v-model="updates">
+            <input type="button" v-on:click="clearThis" v-on:contextmenu="setHustino" value="Btn for JS"><br>
+            {{updates}} || {{name}}
         </div>
 	</div>
-    
-    
-	<script src="javascript/index.js"> </script>
+<script src="javascript/index.js"> </script>
 </body>
 </html>
