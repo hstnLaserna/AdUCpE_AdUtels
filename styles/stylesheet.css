@@ -22,15 +22,13 @@ body {
 	background-color: rgba(180,255,235,1);
 	position: fixed;
 	top: 0;
-	left: 0;
 	width: calc(100% - 200px);
-	min-width: 670px;
 	height: 50px;
-	max-height: 50px;
+    min-width: 459px;
 	padding-left:100px;
 	padding-right:100px;
 	z-index: 1;
-    box-shadow: 0px 0px 5px 1px rgba(60,60,60,.4) inset;
+    box-shadow: 0px -1px 3px 1px rgba(0,0,0,.4);
 }
 
 .logonav 	{
@@ -55,7 +53,7 @@ body {
 
 .container	{
 	width:90%;
-	height:calc(100% - 55px);
+	height:calc(100vh - 55px);
 	margin:55px auto 0;
 }
 
@@ -63,12 +61,15 @@ body {
 	float:left;
 	display:block;
 	width:262px;
+	overflow:hidden;
 }
 
-.divright	{
+.divright	{	
+	left:335px;
 	float:left;
 	display:block;
-	width:1080px;
+	width: calc(100% - 262px) !important;
+	overflow:hidden;
 }
 
 .logonform {
@@ -109,6 +110,24 @@ body {
     color: #0CF;
 }
 
+
+.menuitem 	{
+    color: #C30;
+}
+
+.menuitem a {
+    color: #C30;
+    float: left;
+    display: block;
+    text-align: center;
+    padding: 15.5px 16px;
+    text-decoration: none;
+}
+
+.menuhover a:hover {
+	background-color: rgba(0,0,0,.4);
+    color: #0CF;
+}
 .column {
 	float: left;
 	/*background-image: url(../images/row-bg.jpg);*/
@@ -135,9 +154,9 @@ body {
 }
 
 .maincontent	{
-	width: 100%;
+	width: 98%;
 	min-width:500px;
-	overflow:hidden;
+	padding:0;
 }
 
 .leftcol a {
@@ -232,7 +251,7 @@ h1	{
 .division	{
 	float: left;
 	margin: 0 5px;
-	width: 460px;
+	width: calc(50% - 10px);
 }
 .conts{
 	padding:5px;

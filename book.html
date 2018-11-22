@@ -32,28 +32,26 @@
         <div class="divright">
             <!-- Room details STARTS here-->
             <div class="column maincontent" v-for="room in rooms">
-                <div class="dleft">
-                    <div class="division">
-                        <div class="conts">
-                            <h1> {{room.Room_Name}} </h1>
-                            <p class="roomloc">{{room.address}}</p>
-                            <table class="roomprops" style="width:80%; margin:auto;">
-                            	<tr>
-                            		<td>웃 Max Guests: {{room.max_guests}}</td>
-                            		<td>⌺ Bedrooms: {{room.no_bedrooms}}</td>
-                                </tr>
-                            	<tr>
-                            		<td>⌸ Beds: {{room.no_bed}}</td>
-                            		<td>◧ Baths: {{room.no_bath}}</td>
-                                </tr>
-							</table>
-                        </div>
-                        <div class="conts">
-                            <h1> Comments </h1>
-                            <p>{{room.comments_and_feedback}}</p>
-                        </div>
-                    </div>   
-                </div> 
+                <div class="division">
+                    <div class="conts">
+                        <h1> {{room.Room_Name}} </h1>
+                        <p class="roomloc">{{room.address}}</p>
+                        <table class="roomprops" style="width:80%; margin:auto;">
+                            <tr>
+                                <td>웃 Max Guests: {{room.max_guests}}</td>
+                                <td>⌺ Bedrooms: {{room.no_bedrooms}}</td>
+                            </tr>
+                            <tr>
+                                <td>⌸ Beds: {{room.no_bed}}</td>
+                                <td>◧ Baths: {{room.no_bath}}</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="conts">
+                        <h1> Comments </h1>
+                        <p>{{room.comments_and_feedback}}</p>
+                    </div>
+                </div>
                 <div class="division">
                     <div class="bookingcol">
                         <h1> {{room.currency_symbol}} {{room.price}}<span class="smaller"> per night </span> </h1>
@@ -65,13 +63,15 @@
                                 <option class="dateselector" v-for="i in room.max_guests" v-model="room.guestnumbers">{{i}}</option>
                                 </select>
                         </p>
-                        <p> <br> <i>I confirm the details below are correct</i><br><input type="submit" value="Reserve"></p>
+                        <p><i>I confirm the details below are correct</i><br><input type="submit" value="Reserve"></p>
                         <p>
                         	Book for: {{room.Room_Name}}<br>
-                            For amount of: {{room.currency_symbol}} {{room.price}} per night<br>
+                            For amount of: {{room.currency_symbol}} {{room.price * room.days_of_stay}}<br>
                             From: {{room.begindate}}<br>
                             Until: {{room.enddate}}<br>
-                            With # of guests: {{room.guestnumbers}}<br>
+                            Days of stay: {{room.days_of_stay}}<br>
+                            With # of guests: {{room.guestnumbers}}<br> 
+                            Date: {{currentdate}}<br> 
                         </p>
 
 
