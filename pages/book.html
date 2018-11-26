@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <head>
-    <title>AdUTels - Rooms</title>
-    <link rel="stylesheet" type="text/css" href="styles/stylesheet.css">
+    <title>AdUTels - Booking</title>
+    <link rel="stylesheet" type="text/css" href="../styles/stylesheet.css">
 	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"> </script>
 	<script src="https://unpkg.com/axios/dist/axios.min.js"> </script>
 
@@ -9,7 +9,7 @@
 
 <body class="bodyrooms">
     <div class="topnav">
-		<div class="logonav"><img src="images/logo.png" id="logo"></div>
+		<div class="logonav"><img src="../images/logo.png" id="logo"></div>
         <div class="lblnav">AdUTels</div>
         <div class="linksnav">
             <a href="home.html">Home</a>
@@ -21,7 +21,7 @@
     <div class="container" id="sample">
     	<div class="divleft">
             <div class="column leftcol">
-                <img src="images/header.png" alt="logo" class="center imgleftcol">
+                <img src="../images/header.png" alt="logo" class="center imgleftcol">
                 <span v-html="menu1"></span>
                 <span v-html="menu2"></span>
                 <span v-html="menu3"></span>
@@ -81,25 +81,6 @@
             <!-- Room details ends here-->
         </div>
 	</div>
-<script src="javascript/index.js  "> </script>
+<script src="../javascript/index.js"></script>
 </body>
 </html>
-
-
-<!--
-<p>
-    <span> {{foods[0]}}</span>
-    <span> {{foods[1]}}</span>
-    <span> {{foods[2]}}</span>
-</p>
-<p>
-    <span v-for="fd in foods">
-        {{fd}}
-    </span>
-</p>
-<p>
-    <span v-for="fd in foods">Food name: {{fd.foodname}} | Rating: {{fd.rating}} <br></span>
-</p>
-<input type="text" v-model="updates">
-<input type="button" v-on:click="clearThis" v-on:contextmenu="setHustino" value="Btn for JS"><br>
-{{updates}} || {{name}}-->

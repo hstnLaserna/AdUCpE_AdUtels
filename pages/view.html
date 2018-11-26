@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<head>
+    <title>AdUTels - Available Rooms</title>
+    <link rel="stylesheet" type="text/css" href="../styles/stylesheet.css">
+    <link rel="stylesheet" type="text/css" href="../styles/slider.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"> </script>
+	<script src="https://unpkg.com/axios/dist/axios.min.js"> </script>
+
+</head>
+
+<body class="bodyrooms">
+    <div class="topnav">
+		<div class="logonav"><img src="../images/logo.png" id="logo"></div>
+        <div class="lblnav">AdUTels</div>
+        <div class="linksnav">
+            <a href="home.html">Home</a>
+            <a href="#">Contacts</a>
+            <a href="logon.html">Log-out</a>
+        </div>
+    </div>
+
+    <div class="container" id="sample">
+    	<div class="divleft">
+            <div class="column leftcol">
+                <img src="../images/header.png" alt="logo" class="center imgleftcol">
+                <span v-html="menu1"></span>
+                <span v-html="menu2"></span>
+                <span v-html="menu3"></span>
+                <span v-html="menu4"></span>
+                <span v-html="menu5"></span>
+            </div>
+		</div>
+        <div class="divright">
+            <!-- Room details STARTS here-->
+            <div class="column maincontent" v-for="room in rooms">
+                <div class="division">
+                    <div class="conts">
+                        <h1> {{room.Room_Name}} </h1>
+                        <p class="roomloc">{{room.address}}</p>
+                        <table class="roomprops" style="width:80%; margin:auto;">
+                            <tr>
+                                <td>웃 Max Guests: {{room.max_guests}}</td>
+                                <td>⌺ Bedrooms: {{room.no_bedrooms}}</td>
+                            </tr>
+                            <tr>
+                                <td>⌸ Beds: {{room.no_bed}}</td>
+                                <td>◧ Baths: {{room.no_bath}}</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="conts">
+                        <h1> Comments </h1>
+                        <p>{{room.comments_and_feedback}}</p>
+                    </div>
+                </div>
+                <div class="division">
+                    <div class="conts">
+                        <h1> {{room.currency_symbol}} {{room.price}}<span class="smaller"> per night </span> </h1>
+                        <!--
+                        
+                        <div class="slideshow-container">
+                        
+                        <div class="mySlides fade">
+                          <div class="numbertext">1 / 3</div>
+                          <img src="https://www.w3schools.com/howto/img_nature_wide.jpg" style="width:100%">
+                          <div class="text">Caption Text</div>
+                        </div>
+                        
+                        <div class="mySlides fade">
+                          <div class="numbertext">2 / 3</div>
+                          <img src="https://www.w3schools.com/howto/img_snow_wide.jpg" style="width:100%">
+                          <div class="text">Caption Two</div>
+                        </div>
+                        
+                        <div class="mySlides fade">
+                          <div class="numbertext">3 / 3</div>
+                          <img src="https://www.w3schools.com/howto/img_mountains_wide.jpg" style="width:100%">
+                          <div class="text">Caption Three</div>
+                        </div>
+                        
+                        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                        
+                        </div>
+                        <br>
+                        
+                        <div style="text-align:center">
+                          <span class="dot" onclick="currentSlide(1)"></span> 
+                          <span class="dot" onclick="currentSlide(2)"></span> 
+                          <span class="dot" onclick="currentSlide(3)"></span> 
+                        </div>-->
+                    </div>
+                </div>
+            </div>
+            <!-- Room details ends here-->
+        </div>
+	</div>
+<script src="../javascript/index.js"></script>
+<script src="../javascript/roompics.js"></script>
+</body>
+</html>
