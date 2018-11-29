@@ -3,7 +3,6 @@
     <title>AdUTels - Available Rooms</title>
     <link rel="stylesheet" type="text/css" href="../styles/stylesheet.css">
     <link rel="stylesheet" type="text/css" href="../styles/slider.css">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"> </script>
 	<script src="https://unpkg.com/axios/dist/axios.min.js"> </script>
 
@@ -15,7 +14,7 @@
         <div class="lblnav">AdUTels</div>
         <div class="linksnav">
             <a href="home.html">Home</a>
-            <a href="#">Contacts</a>
+            <a href="#">Contact Us</a>
             <a href="logon.html">Log-out</a>
         </div>
     </div>
@@ -47,50 +46,16 @@
                                 <td>⌸ Beds: {{room.no_bed}}</td>
                                 <td>◧ Baths: {{room.no_bath}}</td>
                             </tr>
+                            <h1> {{room.currency_symbol}} {{room.price}}<span class="smaller"> per night </span> </h1>
                         </table>
                     </div>
-                    <div class="conts">
-                        <h1> Comments </h1>
-                        <p>{{room.comments_and_feedback}}</p>
-                    </div>
                 </div>
+                
+                
                 <div class="division">
                     <div class="conts">
-                        <h1> {{room.currency_symbol}} {{room.price}}<span class="smaller"> per night </span> </h1>
-                        <!--
-                        
-                        <div class="slideshow-container">
-                        
-                        <div class="mySlides fade">
-                          <div class="numbertext">1 / 3</div>
-                          <img src="https://www.w3schools.com/howto/img_nature_wide.jpg" style="width:100%">
-                          <div class="text">Caption Text</div>
-                        </div>
-                        
-                        <div class="mySlides fade">
-                          <div class="numbertext">2 / 3</div>
-                          <img src="https://www.w3schools.com/howto/img_snow_wide.jpg" style="width:100%">
-                          <div class="text">Caption Two</div>
-                        </div>
-                        
-                        <div class="mySlides fade">
-                          <div class="numbertext">3 / 3</div>
-                          <img src="https://www.w3schools.com/howto/img_mountains_wide.jpg" style="width:100%">
-                          <div class="text">Caption Three</div>
-                        </div>
-                        
-                        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-                        <a class="next" onclick="plusSlides(1)">&#10095;</a>
-                        
-                        </div>
-                        <br>
-                        
-                        <div style="text-align:center">
-                          <span class="dot" onclick="currentSlide(1)"></span> 
-                          <span class="dot" onclick="currentSlide(2)"></span> 
-                          <span class="dot" onclick="currentSlide(3)"></span> 
-                        </div>-->
-                    </div>
+                    <!--end of conts-->   
+                    </div> 
                 </div>
             </div>
             <!-- Room details ends here-->

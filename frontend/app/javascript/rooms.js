@@ -1,27 +1,8 @@
 // JavaScript Document
 new Vue({
-    el: '#sample',
+    el: '.rooms',
 
 	data:	{
-		/* side panel/menu items */
-		menu1: '<a class="menuitem" href="../pages/view.html">See available rooms</a><div class="divider"></div>',
-		menu2: '<a class="menuitem" href="../pages/book.html">Book a hotel</a><div class="divider"></div>',
-		menu3: '<a class="menuitem" href="../pages/requests.html">View booking requests</a><div class="divider"></div>',
-		menu4: '<a class="menuitem" href="../pages/drop.html">Remove a booking request</a><div class="divider"></div>',
-		menu5: '<a class="menuitem" href="../pages/update.html">Update booking requests</a>',
-		menu6: '<a class="menuitem" href="../pages/ref.html">Update booking requests</a>',
-		menu6: '<a class="menuitem" href="../pages/ref.html">Update booking requests</a>',
-		/* sample data */
-		name: 'Hustino',
-		updates: 'update thissz',
-		showName: true,
-		foods:	[
-			{	foodname: "apple", rating: 10},
-			{	foodname: "orange", rating: 5},
-			{	foodname: "choco", rating: 8},
-			{	foodname: "mango", rating: 7},
-		],
-		ctr: 1,
 		/* sample json items */
 		rooms:	[
 		{	Room_Name: 'de Finibus Bonorum et Malorum',
@@ -149,19 +130,5 @@ new Vue({
 			currentdate: null,
 		},
 		]
-		
-	},
-	
-	methods: {
-		clearThis: function(){
-			this.name=this.updates;
-			this.updates="";
-			this.ctr++;
-		},
-		setHustino: function(){
-			this.name="Hustino";
-			xx = 'huwaw';
-			this.updates=xx;
-		},
-	},
+	}
 });

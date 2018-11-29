@@ -84,7 +84,13 @@ body {
 	width: 400px;
 	max-height: 400px;
 }
-
+.logonfoot	{
+	padding-top: 10px;
+	width:100%; 
+	text-align:center; 
+	color:#fff; 
+	text-shadow: 2px 2px 7px #000;
+}
 .linksnav 	{
 	float: right;
 	direction:ltr;
@@ -111,23 +117,6 @@ body {
 }
 
 
-.menuitem 	{
-    color: #C30;
-}
-
-.menuitem a {
-    color: #C30;
-    float: left;
-    display: block;
-    text-align: center;
-    padding: 15.5px 16px;
-    text-decoration: none;
-}
-
-.menuhover a:hover {
-	background-color: rgba(0,0,0,.4);
-    color: #0CF;
-}
 .column {
 	float: left;
 	/*background-image: url(../images/row-bg.jpg);*/
@@ -170,14 +159,17 @@ body {
 }
 
 .leftcol a:hover {
-	background-color: rgba(255,255,255,.4);
-    color: #009;
+	background-color: rgba(0,0,0,.4);
+	text-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+	border-radius: 5px;
+    color: rgb(0,255,255);
 }
 
 div.divider	{
-	margin:2px auto;
+	display:none;
+	margin:auto;
 	overflow:hidden;
-	width: 100%;
+	width: 80%;
 	position:relative;
 	border-bottom:solid #3F9 1px;
 }
@@ -209,6 +201,7 @@ span.label {
 	font-size:12px;
 	font-weight:bold;
 	color: #424242;
+	text-transform:uppercase;
 }
 
 .txt	{
