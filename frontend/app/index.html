@@ -1,12 +1,50 @@
 <!DOCTYPE html>
+<html>
 <head>
-    <title>INDEX</title>
+    <meta charset="utf-8" />
+    <title>AdUTels - User log-in</title>
+    <link rel="stylesheet" type="text/css" href="styles/stylesheet.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 </head>
-<body>
-	<script>
-    window.onload = function() {
-        window.location.href = "pages/logon.html";
-    }
-    </script>
+<body class="logons" style="background-image:url(images/wallpaper.jpg);">
+    <div class="topnav">
+		<div class="logonav"><img src="images/logo.png" id="logo"></div>
+        <div class="lblnav">AdUTels</div>
+    </div>
+    <div class="container" id="login">
+    	<div style="height:120px;"></div>
+        <div class="logonform">
+        <form action="" method="post">
+            <img src="images/header.png" alt="logo" class="center">
+            <table class="center">
+            <tbody style="padding:50px;">
+                <tr>
+                    <td class="lbl" width="500"><span class="label">MEMBERSHIP</span></td>
+                    <td class="txt"><input type="text" id="texts" name="username" maxlength="30" v-model="username" autofocus></td>
+                </tr>
+                <tr>
+                    <td class="lbl"><span class="label">PASSWORD</span></td>
+                    <td class="txt"><input type="password" id="texts" name="password" maxlength="30" v-model="password"></td>
+                </tr>
+                <tr>
+                    <td colspan="2" align="center">
+                      <input type="button" value="Log In" v-on:click="logIn"/>
+                      <input type="button" value="Sign Up" v-on:click="signUp"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2" align="center">
+                      <span v-if="message">{{message}}</span>
+                    </td>
+                </tr>
+            </tbody>
+            </table>
+        </form>
+        </div>
+    	<div class="logonfoot">"A promise of premium stay experience like a royalty"</div>
+	</div>
+
+    <script src="scripts/index.js"></script>
 </body>
 </html>
